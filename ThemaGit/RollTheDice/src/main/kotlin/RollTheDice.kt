@@ -21,8 +21,8 @@ fun main() {
 
 askPlayerName()
 
+while (true) {
     val die = Random
-
     val playerScore = die.nextInt(1..6)
     val computerScore = die.nextInt(1..6)
 
@@ -37,4 +37,9 @@ askPlayerName()
         playerScore < computerScore -> println("Der Computer gewinnt")
         else -> println("Unentschieden")
     }
+    println("Nochmal spielen? (j/n)")
+    if (readln() != "j") {
+        println("Danke fürs Spiel!")
+        break}
+}
 }
