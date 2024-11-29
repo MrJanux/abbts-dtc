@@ -20,6 +20,9 @@ fun main() {
     }
 
 askPlayerName()
+var playerCount = 0
+var computerCount = 0
+var unentschieden = 0
 
 while (true) {
     val die = Random
@@ -33,13 +36,26 @@ while (true) {
 
     println("$playerName würfelt: $playerScore  --  Computer würfelt: $computerScore")
     when {
-        playerScore > computerScore -> println("$playerName gewinnt")
-        playerScore < computerScore -> println("Der Computer gewinnt")
-        else -> println("Unentschieden")
+        playerScore > computerScore -> {println("$playerName gewinnt")
+        playerCount++}
+        playerScore < computerScore -> {println("Der Computer gewinnt")
+        computerCount++}
+        else -> {println("Unentschieden")
+        unentschieden++}
     }
     println("Nochmal spielen? (j/n)")
     if (readln() != "j") {
-        println("Danke fürs Spiel!")
+        println("Danke fürs Spiel! ")
+        println("")
+        println("$playerName hat $playerCount Runden gewonnen")
+        println("der Computer hat $computerCount Runden gewonnen")
+        println ("und es gab $unentschieden Unentschieden.")
+        println("")
+        when{
+            playerCount > computerCount -> println("$playerName hat öfter gewonnen!")
+            playerCount < computerCount -> println("Der Computer hat öfter gewonnen!")
+            else -> println("Es gab keinen Gewinner!")
+        }
         break}
 }
 }
