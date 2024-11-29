@@ -9,12 +9,15 @@ import kotlin.random.nextInt
  * Version: 20241120
  */
 
-fun askPlayerName(): String {
-    print("Bitte Name angeben: ")
-    return readln()
-}
+
 
 fun main() {
+
+    var playerName = ""
+    fun askPlayerName() {
+       print("Bitte Name angeben: ")
+        playerName = readln()
+    }
 
 askPlayerName()
 
@@ -28,9 +31,9 @@ askPlayerName()
     // Todo: Solange spielen bis Spieler abbricht
     // Todo: Ausgeben, wer mehr Runden gewonnen hat
 
-    println("Du würfelst: $playerScore  --  Computer würfelt: $computerScore")
+    println("$playerName würfelt: $playerScore  --  Computer würfelt: $computerScore")
     when {
-        playerScore > computerScore -> println("Du gewinnst")
+        playerScore > computerScore -> println("$playerName gewinnt")
         playerScore < computerScore -> println("Der Computer gewinnt")
         else -> println("Unentschieden")
     }
