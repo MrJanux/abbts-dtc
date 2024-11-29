@@ -9,7 +9,14 @@ import kotlin.random.nextInt
  * Version: 20241120
  */
 
+fun askPlayerName(): String {
+    print("Bitte Name angeben: ")
+    return readln()
+}
+
 fun main() {
+
+askPlayerName()
 
     val die = Random
 
