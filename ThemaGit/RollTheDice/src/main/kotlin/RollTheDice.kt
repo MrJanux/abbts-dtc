@@ -1,4 +1,5 @@
 import kotlin.random.Random
+import kotlin.random.nextInt
 
 /**
  * Simuliert ein einfaches Würfelspiel zwischen dem
@@ -12,8 +13,8 @@ fun main() {
 
     val die = Random
 
-    val playerScore = die.nextInt(7)
-    val computerScore = die.nextInt(7)
+    val playerScore = die.nextInt(1..6)
+    val computerScore = die.nextInt(1..6)
 
     // Todo: Den Fehler im Programm finden und beheben
     // Todo: Den Spieler nach dem Namen fragen
